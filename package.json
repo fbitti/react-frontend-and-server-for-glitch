@@ -1,8 +1,19 @@
 {
   "dependencies": {
+    "express": "^4.18.2",
     "npm": "^7.20.6"
   },
   "engines": {
     "node": "16.x"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build"
   }
 }
